@@ -2453,6 +2453,15 @@ function Attune_CheckComplete(newComplete, checkAllAttunes)
 	if att.done["190-260"] and att.attuned["190"] ~= 100 	then att.done["190-280"] = 1; 	Attune_SendPushInfo("190-280"); 	att.attuned["190"] = 100; attunesToCheck["190"]=true; Attune_UpdateTreeGroup("190"); newComplete = true;  end	-- BT Horde
 	if att.done["200-260"] and att.attuned["200"] ~= 100 	then att.done["200-280"] = 1; 	Attune_SendPushInfo("200-280"); 	att.attuned["200"] = 100; attunesToCheck["200"]=true; Attune_UpdateTreeGroup("200"); newComplete = true;  end	-- BT Alliance
 
+	if att.done["300-290"] and att.attuned["300"] ~= 100 	then att.done["300-300"] = 1; 	Attune_SendPushInfo("300-300"); 	att.attuned["300"] = 100; Attune_UpdateTreeGroup("300"); newComplete = true;  end	-- Wrathgate Horde
+	if att.done["310-400"] and att.attuned["310"] ~= 100 	then att.done["310-410"] = 1; 	Attune_SendPushInfo("310-410"); 	att.attuned["310"] = 100; Attune_UpdateTreeGroup("310"); newComplete = true;  end	-- Wrathgate Alliance
+	if att.done["330-380"] and att.attuned["330"] ~= 100 	then att.done["330-390"] = 1; 	Attune_SendPushInfo("330-390"); 	att.attuned["330"] = 100; Attune_UpdateTreeGroup("330"); newComplete = true;  end	-- Sons of Hodir
+	if att.done["340-140"] and att.attuned["340"] ~= 100 	then att.done["340-150"] = 1; 	Attune_SendPushInfo("340-150"); 	att.attuned["340"] = 100; Attune_UpdateTreeGroup("340"); newComplete = true;  end	-- Ebon Blade Horde
+	if att.done["350-140"] and att.attuned["350"] ~= 100 	then att.done["350-150"] = 1; 	Attune_SendPushInfo("350-150"); 	att.attuned["350"] = 100; Attune_UpdateTreeGroup("350"); newComplete = true;  end	-- Ebon Blade Alliance
+	if att.done["370-50"] and att.attuned["370"] ~= 100 	then att.done["370-60"] = 1; 	Attune_SendPushInfo("370-60"); 		att.attuned["370"] = 100; Attune_UpdateTreeGroup("370"); att.done["360-55"] = 1; newComplete = true;  end	-- Malygos 25 -- this also pushes the sub attunement in Maly 10
+	if att.done["360-55"] 									then att.done["360-50"] = 1; 	Attune_SendPushInfo("360-50"); 		newComplete = true;  end	-- Malygos 10 (granted via Malygos 25)
+	if att.done["360-50"] and att.attuned["360"] ~= 100 	then att.done["360-60"] = 1; 	Attune_SendPushInfo("360-60"); 		att.attuned["360"] = 100; Attune_UpdateTreeGroup("360"); newComplete = true;  end	-- Malygos 10 (granted via quest)
+
 	if att.done["250-110"] and att.attuned["250"] ~= 100 	then att.done["250-120"] = 1; 	Attune_SendPushInfo("250-120"); 	att.attuned["250"] = 100; attunesToCheck["250"]=true; Attune_UpdateTreeGroup("250"); newComplete = true;  end	-- Ogrila
 	if att.done["260-110"] and att.attuned["260"] ~= 100 	then att.done["260-120"] = 1; 	Attune_SendPushInfo("260-120"); 	att.attuned["260"] = 100; attunesToCheck["260"]=true; Attune_UpdateTreeGroup("260"); newComplete = true;  end	-- Netherwing
 
@@ -6212,6 +6221,7 @@ function Attune_Icons(what, gender)
 	if (what == "SHAMAN") 	then icon = "Interface\\Icons\\spell_nature_bloodlust" end
 	if (what == "WARLOCK") then icon = "Interface\\Icons\\spell_nature_drowsy" end
 	if (what == "WARRIOR") then icon = "Interface\\Icons\\inv_sword_27" end
+	if (what == "DEATHKNIGHT") then icon = "Interface\\Icons\\Spell_deathknight_classicon" end
 	if (what == "UNKNOWN") then icon = "Interface\\Icons\\Inv_misc_questionmark" end
 	
 	local g = 'male'
